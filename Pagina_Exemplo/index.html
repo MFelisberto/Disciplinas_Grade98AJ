@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard 98AJ — Gestão de Curso · PUCRS</title>
+  <meta name="description"
+    content="Dashboard de gestão do curso de Ciência da Computação — Matriz 98AJ, PUCRS. Visualize a matriz curricular, fluxo de pré-requisitos, heatmaps de desempenho e previsões de demanda.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+</head>
+
+<body>
+
+  <div class="shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-title">Dashboard 98AJ</div>
+        <div class="sidebar-logo-sub">Ciência da Computação · PUCRS</div>
+      </div>
+
+      <div class="sidebar-section">Análise</div>
+      <div class="nav-item active" data-page="overview">
+        <i class="ti ti-layout-dashboard"></i> Visão geral
+      </div>
+      <div class="nav-item" data-page="matriz">
+        <i class="ti ti-table"></i> Matriz Curricular
+      </div>
+      <div class="nav-item" data-page="flow">
+        <i class="ti ti-git-branch"></i> Fluxo curricular
+      </div>
+      <div class="nav-item" data-page="heatmap">
+        <i class="ti ti-layout-grid"></i> Heatmap
+      </div>
+
+      <div class="sidebar-section">Predição</div>
+      <div class="nav-item" data-page="predict">
+        <i class="ti ti-chart-line"></i> Demanda futura
+      </div>
+      <div class="nav-item" data-page="multi">
+        <i class="ti ti-circles-relation"></i> Multidomínio
+      </div>
+
+      <div class="sidebar-bottom" style="display:flex; justify-content:center; align-items:center; padding: 24px 0;">
+        <img src="images/logopuc.jpg" alt="PUCRS Logo" style="max-width: 150px; opacity: 0.85; mix-blend-mode: multiply; filter: grayscale(10%) contrast(1.1);">
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- TOPBAR -->
+      <div class="topbar">
+        <div>
+          <div class="topbar-title" id="topbarTitle">Visão geral</div>
+          <div class="topbar-sub">Bacharelado em Ciência da Computação · <span id="topbarSem">2026/1</span></div>
+        </div>
+        <div class="topbar-right">
+          <span class="chip chip-blue"><i class="ti ti-users" style="font-size:13px"></i> 534 ativos</span>
+          <span class="chip chip-green"><i class="ti ti-database" style="font-size:13px"></i> Ciência da Computação</span>
+        </div>
+      </div>
+
+      <!-- CONTENT — pages render here -->
+      <div class="content-area" id="pageContainer"></div>
+
+    </div><!-- /main -->
+  </div><!-- /shell -->
+
+  <!-- Scripts: data first, then page modules, then router -->
+  <script src="js/data.js"></script>
+  <script src="js/pages/overview.js"></script>
+  <script src="js/pages/matriz.js"></script>
+  <script src="js/pages/flow.js"></script>
+  <script src="js/pages/heatmap.js"></script>
+  <script src="js/pages/predict.js"></script>
+  <script src="js/pages/multi.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
